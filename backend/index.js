@@ -11,14 +11,13 @@ const textChunk = require('png-chunk-text');
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173' // Replace with your frontend domain
+    origin: 'https://stegno-hasher.vercel.app/'
   }));
   
 const upload = multer({ dest: 'uploads/' });
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 🔐 ENCRYPT SIDE - Embed JSON metadata in PNG text chunk
 app.post('/embed', upload.single('image'), (req, res) => {
     const { metadataJson } = req.body;
     const imagePath = req.file.path;
@@ -52,7 +51,6 @@ app.post('/embed', upload.single('image'), (req, res) => {
     });
 });
 
-// 🔓 DECRYPT SIDE - Extract JSON metadata from PNG text chunk
 app.post('/extract', upload.single('image'), (req, res) => {
     const imagePath = req.file.path;
     try {
@@ -73,7 +71,7 @@ app.post('/extract', upload.single('image'), (req, res) => {
     }
 });
 
-// 🚀 Start server
+
 const PORT = 5000;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
