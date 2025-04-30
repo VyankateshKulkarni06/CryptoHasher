@@ -275,7 +275,7 @@ export default function EnhancedUploadImage() {
                           </div>
                           <div className="space-y-2">
                             <div className="flex space-x-2 items-center">
-                              <label className="text-xs w-20 text-gray-700">storedHash:</label>
+                              <label className="text-xs w-20 text-gray-700">datah1:</label>
                               <input
                                 type="text"
                                 value={pair.storedHash}
@@ -284,7 +284,7 @@ export default function EnhancedUploadImage() {
                               />
                             </div>
                             <div className="flex space-x-2 items-center">
-                              <label className="text-xs w-20 text-gray-700">iv:</label>
+                              <label className="text-xs w-20 text-gray-700">datai2:</label>
                               <input
                                 type="text"
                                 value={pair.iv}
