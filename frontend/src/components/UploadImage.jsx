@@ -88,7 +88,7 @@ export default function EnhancedUploadImage() {
     }
 
     if (activeTab === 'embed' && hashIvPairs.some(pair => pair.storedHash.trim() === '' || pair.iv.trim() === '')) {
-      setError('Please fill in all hash and IV fields.');
+      setError('Please fill in all DATA_H and DATA_IV fields.');
       return;
     }
 
@@ -248,13 +248,13 @@ export default function EnhancedUploadImage() {
                 <div className={`${isMobile ? 'w-full' : 'w-1/2'}`}>
                   <div className="bg-white border border-indigo-200 rounded-lg p-4 h-full shadow-sm">
                     <div className="flex justify-between items-center mb-4">
-                      <h3 className="text-lg font-medium text-indigo-800">Hash & IV Pairs</h3>
+                      <h3 className="text-lg font-medium text-indigo-800">DATA_H & DATA_IV Pairs</h3>
                       <button
                         type="button"
                         onClick={addHashIvPair}
                         className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 px-4 rounded-md text-sm font-medium hover:from-indigo-700 hover:to-purple-700 shadow-sm transition"
                       >
-                        + Add Hash & IV Pair
+                        + Add New Pair
                       </button>
                     </div>
 
@@ -363,7 +363,7 @@ export default function EnhancedUploadImage() {
                       </div>
                       <div className="space-y-2">
                         <div className="flex space-x-2 items-center">
-                          <label className="text-xs w-20 text-gray-700">storedHash:</label>
+                          <label className="text-xs w-20 text-gray-700">DATA_H:</label>
                           <div className="flex-1 p-2 bg-white border border-gray-300 rounded-md text-xs break-all">
                             {pair.storedHash}
                           </div>
