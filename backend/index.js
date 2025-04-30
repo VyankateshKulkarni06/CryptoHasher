@@ -11,7 +11,7 @@ const textChunk = require('png-chunk-text');
 
 const app = express();
 app.use(cors({
-    origin: 'https://stegno-hasher.vercel.app/'
+    origin: 'https://stegno-hasher.vercel.app'
   }));
   
 const upload = multer({ dest: 'uploads/' });
