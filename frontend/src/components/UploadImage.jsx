@@ -110,12 +110,12 @@ export default function EnhancedUploadImage() {
         const metadataJson = JSON.stringify(validPairs);
         formData.append('metadataJson', metadataJson);
 
-        result = await fetch('http://localhost:5000/embed', {
+        result = await fetch('https://cryptohasher.onrender.com/embed', {
           method: 'POST',
           body: formData,
         });
       } else {
-        result = await fetch('http://localhost:5000/extract', {
+        result = await fetch('https://cryptohasher.onrender.com/extract', {
           method: 'POST',
           body: formData,
         });
